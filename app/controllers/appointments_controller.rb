@@ -21,7 +21,6 @@ class AppointmentsController < ApplicationController
 
   # POST /appointments
   def create
-   
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
    
