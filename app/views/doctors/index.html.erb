@@ -1,37 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Doctors</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Specialty</th>
-      <th>Rating</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @doctors.each do |doctor| %>
-      <tr>
-        <td><%= doctor.name %></td>
-        <td><%= doctor.address %></td>
-        <td><%= doctor.specialty %></td>
-        <td><%= doctor.rating %></td>
-        <td><%= link_to 'Show', doctor %></td>
-        <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-        <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Doctor', new_doctor_path %>
-
+<h1>Available Doctors</h1>
 
 <div class="container mt-3">
   <div class="row">
@@ -43,13 +12,13 @@
             <div class="doc-card-title">
               <h4><%= doctor.name %></h4>
             </div>
-            <p><%= doctor.address %></p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i><%= doctor.address %></p>
             <div class="flex">
               <div class="flex">
-                <i class="fas fa-stethoscope"></i><span>&nbsp;<%= doctor.specialty %></span>
+               <p><i class="fas fa-stethoscope"></i><span>&nbsp;<%= doctor.specialty %></p>
               </div>
               <div class="flex ml-3">
-                <i class="fas fa-star mr-2"></i><%= doctor.rating %></li>
+                <p><i class="fas fa-star mr-2"></i><%= doctor.rating %></li></p>
               </div>
             </div>
           </div>

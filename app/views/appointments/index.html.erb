@@ -1,33 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Appointments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Symptoms</th>
-      <th>User</th>
-      <th>Doctor</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @appointments.each do |appointment| %>
-      <tr>
-        <td><%= appointment.symptoms %></td>
-        <td><%= appointment.user.email %></td>
-        <td><%= appointment.doctor.name %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
-<%= link_to 'New Appointment', new_appointment_path %>
-
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1>My appointments</h1>
+      <div class="d-flex justify-content-end mb-3"><button class="btn btn-dark"><%= link_to 'Book an Appointment', new_appointment_path, style: "color: white;" %></button></div>
+      <br>
+      <% @appointments.each do |appointment| %>
+        <div class="card text-center">
+          <div class="card-header" style="background-color:white;">
+            Appointment with: Dr <%= appointment.doctor.name %>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= appointment.symptoms %></p>
+          </div>
+          <div class="card-footer" style="background-color:white;">
+            <button class="btn btn-dark"><i class="fas fa-edit mr-2">&nbsp;<%= link_to ' Edit', edit_appointment_path(appointment), style:"color:white;" %></i></button>
+            <button class="btn btn-dark"><i class="fas fa-trash-alt mr-2">&nbsp;<%= link_to ' Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' }, style:"color:white;" %></i></button>
+            <button class="btn btn-dark"><i class="fas fa-info-circle mr-2">&nbsp;<%= link_to ' More info', appointment, style:"color:white;" %></i></button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
