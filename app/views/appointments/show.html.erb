@@ -1,25 +1,53 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Symptoms:</strong>
-  <%= @appointment.symptoms %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @appointment.user_id %>
-</p>
-
-<p>
-  <strong>Doctor:</strong>
-  <%= @appointment.doctor_id %>
-</p>
-
-<% if @appointment.photos.attached? %>
-  <% @appointment.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %> 
-  <% end %>
-<% end %>
-
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', appointments_path %>
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div>
+      <h3><%= @appointment.user.email %> appointments details:</h3>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="card mr-2">
+      <div class="card-header" style="background-color:white;">
+       <h5>Appointment with Dr.<%= @appointment.doctor.name %></h5>
+      </div>
+      <div class="d-flex flex-column align-items-center text-center mt-3">
+        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="250">
+        <br>
+        <p>Specialty: <%= @appointment.doctor.specialty %></p>
+      </div>
+    </div>
+    <div class="card p-2">
+      <div class="card-header" style="background-color:white;">
+        <h3>Pictures of your symptoms</h3>
+      </div>
+      <div class="card-body">
+        <% if @appointment.photos.attached? %>
+          <% @appointment.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %> 
+          <% end %>
+        <% end %>
+      </div>
+      <div class="card-footer" style="background-color:white;">
+        <h3>Symptoms details</h3>
+        <p><%= @appointment.symptoms %></p>
+      </div>
+       <div class="card-footer">
+        <button class="btn btn-dark"><i class="fas fa-edit mr-2">&nbsp;<%= link_to ' Edit', edit_appointment_path(@appointment), style:"color:white;" %></i></button>
+        <button class="btn btn-dark"><i class="fas fa-trash-alt mr-2">&nbsp;<%= link_to ' Delete', @appointment, method: :delete, data: { confirm: 'Are you sure?' }, style:"color:white;" %></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <div class="d-flex justify-content-end">
+        <p><%= link_to '< Go Back', appointments_path, style:"color:black;" %></p>
+      </div>
+    </div>
+  </div>
+</div>
