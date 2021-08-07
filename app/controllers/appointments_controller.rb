@@ -21,9 +21,10 @@ class AppointmentsController < ApplicationController
 
   # POST /appointments
   def create
+   
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
-    @appointment.doctor = Doctor.first
+   
 
     if @appointment.save
       redirect_to @appointment, notice: 'Appointment was successfully created.'
@@ -55,6 +56,6 @@ class AppointmentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def appointment_params
-      params.require(:appointment).permit(:symptoms, :user_id, :doctor_id,  photos: [])
+      params.require(:appointment).permit(:symptoms, :doctor_id,  photos: [])
     end
 end
