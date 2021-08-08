@@ -9,13 +9,13 @@
 
   .banner-image-div {
     grid-area: 1 / 1 / 2 / 2;
-  } // image
+  } 
   .banner-overlay-div {
     grid-area: 1 / 1 / 2 / 2;
-  } // gradient or other overlay
+  } 
   .banner-text-div {
     grid-area: 1 / 1 / 2 / 2;
-  } // overlay objects like text, buttons, etc.
+  } 
 }
 
 // Banner image (layer 1)

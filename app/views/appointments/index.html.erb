@@ -3,24 +3,24 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-      <h4>Hello</h4>
+      <h4>Hola</h4>
       <h2><%= current_user.email%></h2>
-      <h4>here are your appointments</h4>
+      <h4>estas son tus citas</h4>
       <br>
-      <div class="d-flex justify-content-end mb-3"><button class="btn btn-dark"><%= link_to 'Book an Appointment', new_appointment_path, style: "color: white;" %></button></div>
+      <div class="d-flex justify-content-end mb-3"><button class="btn btn-dark"><%= link_to 'Hacer cita', new_appointment_path, style: "color: white;" %></button></div>
         <% @appointments.each do |appointment| %>
         <% if current_user == appointment.user %>
             <div class="card text-center">
               <div class="card-header" style="background-color:white;">
-                Appointment with: Dr <%= appointment.doctor.name %>
+                Cita con: Dr <%= appointment.doctor.name %>
               </div>
               <div class="card-body">
                 <p class="card-text"><%= appointment.symptoms %></p>
               </div>
               <div class="card-footer" style="background-color:white;">
-                <button class="btn btn-dark"><i class="fas fa-edit mr-2">&nbsp;<%= link_to ' Edit', edit_appointment_path(appointment), style:"color:white;" %></i></button>
-                <button class="btn btn-dark"><i class="fas fa-trash-alt mr-2">&nbsp;<%= link_to ' Delete', appointment, method: :delete, data: { confirm: 'Are you sure?' }, style:"color:white;" %></i></button>
-                <button class="btn btn-dark"><i class="fas fa-info-circle mr-2">&nbsp;<%= link_to ' More info', appointment, style:"color:white;" %></i></button>
+                <button class="btn btn-dark"><i class="fas fa-edit mr-2">&nbsp;<%= link_to ' Editar', edit_appointment_path(appointment), style:"color:white;" %></i></button>
+                <button class="btn btn-dark"><i class="fas fa-trash-alt mr-2">&nbsp;<%= link_to ' Borrar', appointment, method: :delete, data: { confirm: 'Are you sure?' }, style:"color:white;" %></i></button>
+                <button class="btn btn-dark"><i class="fas fa-info-circle mr-2">&nbsp;<%= link_to ' Mas info', appointment, style:"color:white;" %></i></button>
               </div>
             </div>
             <br><br>

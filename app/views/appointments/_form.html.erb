@@ -1,18 +1,18 @@
 <div class="container">
+  <h1>Agrega tus sintomas con o sin fotografias y crea una cita</h1>  
   <div class="row justify-content-center">
-    <h1>Add your symptoms and make an appointment</h1>  
     <%= simple_form_for(@appointment) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
         <%= f.input :symptoms, :input_html => { 'rows' => 8, 'cols' => 10 }%>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photo" %>
-        <%= f.association :doctor, label: "Choose a Doctor" %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Adjunta una foto" %>
+        <%= f.association :doctor, label: "Elije un Doctor" %>
       </div>
 
        <div class="d-flex justify-content-center pt-5">
-        <%= f.button :submit, class:"btn btn-dark", style:"color:white;" %>
+        <%= f.button :submit, class:"btn btn-dark", style:"color:white;"%>
       </div>
     <% end %>
   </div>

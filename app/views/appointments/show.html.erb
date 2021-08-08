@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div>
-      <h3><%= @appointment.user.email %> appointments details:</h3>
+      <h3><%= @appointment.user.email %> detalles de tu cita:</h3>
     </div>
   </div>
 </div>
@@ -12,17 +12,17 @@
   <div class="row justify-content-center">
     <div class="card mr-2">
       <div class="card-header" style="background-color:white;">
-       <h5>Appointment with Dr.<%= @appointment.doctor.name %></h5>
+       <h5>Cita con Dr.<%= @appointment.doctor.name %></h5>
       </div>
       <div class="d-flex flex-column align-items-center text-center mt-3">
         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="250">
         <br>
-        <p>Specialty: <%= @appointment.doctor.specialty %></p>
+        <p>Specialidad: <%= @appointment.doctor.specialty %></p>
       </div>
     </div>
     <div class="card mt-5 p-2">
       <div class="card-header" style="background-color:white;">
-        <h3>Pictures of your symptoms</h3>
+        <h3>Fotos de tu sintomas</h3>
       </div>
       <div class="card-body">
         <% if @appointment.photos.attached? %>
@@ -32,7 +32,7 @@
         <% end %>
       </div>
       <div class="card-footer" style="background-color:white;">
-        <h3>Symptoms details</h3>
+        <h3>Detalles de los Sintomas</h3>
         <p><%= @appointment.symptoms %></p>
       </div>
        <div class="card-footer">

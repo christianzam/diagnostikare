@@ -13,18 +13,12 @@ Turbolinks.start()
 ActiveStorage.start()
 
 
-// ----------------------------------------------------
-// ABOVE IS RAILS DEFAULT CONFIGURATION
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
+// Internal imports
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
   // initSelect2();
 });

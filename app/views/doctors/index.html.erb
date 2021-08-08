@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Available Doctors</h1>
-
+<h1>Doctores disponibles</h1>
 <div class="container mt-3">
   <div class="row">
     <% @doctors.each do |doctor| %>
@@ -23,7 +21,7 @@
             </div>
           </div>
           <div class="doc-card-actions">
-            <%= link_to 'More info', doctor %>
+            <i class="fas fa-info-circle"></i>&nbsp;&nbsp;<%= link_to 'Mas Informacion', doctor %>
           </div>
         </div>
       </div>
