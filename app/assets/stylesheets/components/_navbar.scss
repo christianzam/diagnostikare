@@ -1,9 +1,14 @@
-.navbar-lewagon {
+.navbar-diagnostikare {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  transition: 1s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-darker {
+  background-color: #C3CCCB
+}
+
+.navbar-diagnostikare .navbar-collapse {
   flex-grow: 0;
 }
 
@@ -13,7 +18,7 @@
   text-decoration: none !important;
   margin-left: 2rem;
   &:hover {
-    color: #ddeceb;;
+    color: #4a5e5c;;
   }
 }
 

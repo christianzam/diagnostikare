@@ -7,7 +7,7 @@ puts "database clean"
 puts ""
 puts "creating database...."
 puts ""
-5.times do
+9.times do
   doctor = Doctor.create!(
     name: Faker::Name.name ,
     address: Faker::Address.street_address,
