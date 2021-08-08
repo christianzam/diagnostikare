@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
     if @appointment.save
-      UserMailer.appointment_boooked.deliver_later
+      UserMailer.appointment_boooked(@appointment.user.email).deliver_later
       redirect_to @appointment, notice: 'Appointment was successfully created.'
     else
       render :new

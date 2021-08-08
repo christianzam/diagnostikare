@@ -5,9 +5,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.appointment_boooked.subject
   #
-  def appointment_boooked
+  def appointment_boooked(user)
+    @user = user
+    mail(to: @user, subject: "Appointment booked" )
     @greeting = "Hi"
 
-    mail to: User.first.email, subject: "Appointment Confirmation"
+  
   end
 end
