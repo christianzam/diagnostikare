@@ -9,7 +9,5 @@ class UserMailer < ApplicationMailer
     @user = user
     mail(to: @user, subject: "Appointment booked" )
     @greeting = "Hi"
-
-  
   end
 end
